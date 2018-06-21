@@ -9,7 +9,7 @@ import IntSet.IntSetList;
 class IntSetListTest {
 
 	IntSetList a = new IntSetList();
-	private static int MAX_VAL = 10000000;
+	private static int MAX_VAL = 1000000;
 	private static int MAX_ELE = MAX_VAL/100;
 	private static Random num = new Random();
 	
@@ -48,15 +48,12 @@ class IntSetListTest {
 		for(int i=0;i<MAX_ELE;i++) {
 			assertEquals(a.size(), a.List.size());
 		}
-		//fail("REPORT error");
 	}
 
 
 	@Test
 	void testSize() {
-		a.intSetImp(MAX_ELE, MAX_VAL);
-
-		//fail("SIZE error");
+		a.size();
 	}
 
 }

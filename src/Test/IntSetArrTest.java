@@ -8,9 +8,8 @@ import IntSet.IntSetArr;
 
 class IntSetArrTest {
 	IntSetArr a = new IntSetArr();
-	private static int MAX_VAL = 1000;
+	private static int MAX_VAL = 1000000;
 	private static int MAX_ELE = MAX_VAL/100;
-	private static Random num = new Random();
 	@Test
 	void testintSetImp() {
 		a.intSetImp(MAX_ELE, MAX_VAL);
@@ -20,23 +19,24 @@ class IntSetArrTest {
 
 	@Test
 	void testSize() {
-		a.intSetImp(MAX_ELE, MAX_VAL);
-		do {
-			a.insert(num.nextInt(MAX_VAL));
-		}while(a.size()<MAX_ELE);
+		a.size();
 		
 	}
 	
 	@Test
 	void testInsert() {	
-		int[] tmp = {0,1,2,3,4,5,6,7,8,9};
+		int[] tmp = new int[MAX_ELE];
 
 		a.intSetImp(MAX_ELE, MAX_VAL);
 		int x=0;
-		do {
-			a.insert(x++);
-		}while(a.size()<MAX_ELE);
-		
+		for(int i=0; i<MAX_ELE;i++)
+		{
+			tmp[i]=x++;
+		}
+		for(int i=0; i<MAX_ELE;i++)
+		{
+			a.insert(tmp[i]);
+		}
 		for(int i=0;i<MAX_ELE;i++) {
 			assertEquals(tmp[i], a.array[i]);
 		}
@@ -44,13 +44,18 @@ class IntSetArrTest {
 	
 	@Test
 	void testReport() {
-		int[] tmp = {0,1,2,3,4,5,6,7,8,9};
+		int[] tmp = new int[MAX_ELE];
 
-		
 		a.intSetImp(MAX_ELE, MAX_VAL);
-		do {
-			a.insert(num.nextInt(MAX_ELE));
-		}while(a.size()<MAX_ELE);
+		int x=0;
+		for(int i=0; i<MAX_ELE;i++)
+		{
+			tmp[i]=x++;
+		}
+		for(int i=0; i<MAX_ELE;i++)
+		{
+			a.insert(tmp[i]);
+		}
 		a.report();
 		for(int i=0; i<MAX_ELE;i++) {
 			assertEquals(tmp[i],a.array[i]);
