@@ -8,7 +8,7 @@ import IntSet.IntSetArr;
 
 class IntSetArrTest {
 	IntSetArr a = new IntSetArr();
-	private static int MAX_VAL = 1000;
+	private static int MAX_VAL = 1000000;
 	private static int MAX_ELE = MAX_VAL/100;
 	@Test
 	void testintSetImp() {
