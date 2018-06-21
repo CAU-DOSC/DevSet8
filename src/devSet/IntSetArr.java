@@ -1,4 +1,4 @@
-package Set;
+package devSet;
 
 public class IntSetArr implements IntSet{
 	public int[] array;
