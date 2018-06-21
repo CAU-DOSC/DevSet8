@@ -1,4 +1,4 @@
-package Set;
+package devSet;
 
 public interface IntSet {
 	void intSetImp(int maxelems, int maxval);
