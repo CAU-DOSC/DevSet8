@@ -5,9 +5,4 @@
 
 과제 : Set implementation 
 
-분배
 
-권원 Bins
-배용한 Bit vectors
-변영무 Binary Search Tree
-허수민 Array/ List
