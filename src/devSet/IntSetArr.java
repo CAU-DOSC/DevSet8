@@ -1,49 +1,40 @@
 package Set;
 
-public class IntSetArr implements IntSet {
-	private int[] array;
-	private int length;
-	private int maxval;
+public class IntSetArr implements IntSet{
+	public int[] array;
+	public int size;
+	public int maxvalue;
 	
 	public IntSetArr() {
-		length = 0;
-		maxval = 0;
-	}
-
-	@Override
-	public void intSetImp(int maxelems, int maxval) {
-		// TODO Auto-generated method stub
-		array = new int[maxelems];
-		this.maxval = maxval;
-	}
-
-	@Override
-	public void insert(int element) {
-		// TODO Auto-generated method stub
-		if(length < array.length && element <= maxval) {
-			for(int i = 0; i < length; i++) {
-				if(array[i] == element)
-					return;
-			}
-			array[length] = element;
-			length ++;
-		}
-	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return length;
-	}
-
-	@Override
-	public int[] report() {
-		// TODO Auto-generated method stub
-		sort();
+		size=0;
+		maxvalue=0;
 		
-		return array;
+	}
+	public int size() {
+		return size;
+		
+	}
+	public void intSetImp(int maxelems, int maxval) {
+		array = new int[maxelems];
+		maxvalue = maxval;
+		
 	}
 	
+	public void insert(int element) { //insert
+		if(size < array.length && element < maxvalue) {
+			for(int i=0;i<size;i++) {
+				if(element == array[i]) {
+					return ;
+				}
+			}
+			array[size] = element;
+			size++;
+		}
+	}
+	public int[] report() {
+		sort();
+		return array;
+	}
 	private void sort() {
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array.length - i - 1; j++) {
@@ -55,5 +46,7 @@ public class IntSetArr implements IntSet {
 			}
 		}
 	}
+
 	
 }
+
